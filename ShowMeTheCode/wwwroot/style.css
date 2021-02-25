@@ -1,0 +1,21 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.form-fields, .result, .presentation, .titulos {
+    margin: 10px;
+}
+
+.result th, .result td {
+    padding: 10px;
+    border: 1px solid #ddd
+}
+
+#minutos{
+    width: 100px
+}
+
+#planos table {
+    width: 500px;
+}

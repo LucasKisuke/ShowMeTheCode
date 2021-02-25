@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css "/>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="titulos">
+        <h1 class="title is-1">Telzir</h1>
+        <h2 class="subtitle is-2">FaleMais</h2>
+    </div>
+    <br />
+    <div class="content presentation">
+        <h4 class="title is-4">Com o novo plano FaleMais, você poderá falar com quem você gosta por muito mais tempo e pagando menos!</h4>
+        <br />
+        <div id="planos">
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <th>Planos</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>FaleMais 30</td>
+                        <td>Os primeiros 30 minutos da ligação são grátis</td>
+                    </tr>
+                    <tr>
+                        <td>FaleMais 60</td>
+                        <td>Os primeiros 60 minutos da ligação são grátis</td>
+                    </tr>
+                    <tr>
+                        <td>FaleMais 120</td>
+                        <td>Os primeiros 120 minutos da ligação são grátis</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="form-fields">
+        <h4 class="title is-4">Quer saber o quanto você pode economizar? Faça um teste.</h4>
+
+        <div class="field">
+            <label>DDD de origem:</label>
+            <div class="control">
+                <select id="dddOrigem" class="select">
+                    <option hidden></option>
+                    <option value="11" onclick="RemoverDddDestino([11])">(011)</option>
+                    <option value="16">(016)</option>
+                    <option value="17">(017)</option>
+                    <option value="18">(018)</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label>DDD de destino:</label>
+            <div class="control">
+                <select id="dddDestino" class="select">
+                    <option hidden></option>
+                    <option value="11">(011)</option>
+                    <option value="16">(016)</option>
+                    <option value="17">(017)</option>
+                    <option value="18">(018)</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label>Minutos falados:</label>
+            <div class="control">
+                <input class="input" id="minutos" onkeypress="return onlyNumberKey(event)" />
+            </div>
+        </div>
+        <div class="field">
+            <label>Plano:</label>
+            <div class="control">
+                <select id="plano" class="select">
+                    <option hidden></option>
+                    <option value="30">FaleMais30</option>
+                    <option value="60">FaleMais60</option>
+                    <option value="120">FaleMais120</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button" id="calcular" onclick="Calcular()">Calcular</button>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <br />
+        <table id="tabelaResultado" style="display:none">
+            <tr>
+                <th>Com FaleMais</th>
+                <th>Sem FaleMais</th>
+            </tr>
+            <tr>
+                <td id="comFaleMais"></td>
+                <td id="semFaleMais"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
